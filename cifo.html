@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz terminologia</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .quiz-container {
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .question {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .options button {
+    display: block;
+    margin: 5px 0;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #eee;
+    transition: background 0.3s;
+    font-size: 16px;
+  }
+
+  .options button:hover { background: #ddd; }
+
+  .correct { background-color: #c8e6c9; border-color: #388e3c; color: #2e7d32; }
+  .wrong { background-color: #ffcdd2; border-color: #d32f2f; color: #c62828; }
+
+  .result {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+
+  #nextBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2196F3;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  #nextBtn:hover { background: #1976D2; }
+</style>
+</head>
+<body>
+
+<h1>Quiz English</h1>
+
+<div class="quiz-container" id="quiz-container"></div>
+<div class="result" id="result">Score: 0</div>
+<button id="nextBtn" style="display:none;">Siguiente</button>
+
+<script>
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Tus questions aquí
+const allQuestions = [
+[
+{question: "An Accounts Assistant is the person who helps with basic accounting tasks.", options: ["v", "f"], answer: "v"},
+{question: "A CEO is the person who leads the whole company.", options: ["v", "f"], answer: "v"},
+{question: "A Finance Director is the person who manages the company’s money.", options: ["v", "f"], answer: "v"},
+{question: "A Financial Supervisor is the person who checks financial work and supports the team.", options: ["v", "f"], answer: "v"},
+{question: "An IT Manager is the person who manages computer systems and the IT team.", options: ["v", "f"], answer: "v"},
+{question: "An HR Manager is the person who manages employees and hiring.", options: ["v", "f"], answer: "v"},
+{question: "A Junior Administrative Assistant is the person who helps with simple office tasks.", options: ["v", "f"], answer: "v"},
+{question: "A Marketing Manager is the person who plans how to promote products.", options: ["v", "f"], answer: "v"},
+{question: "An Operations Manager is the person who controls daily company activities.", options: ["v", "f"], answer: "v"},
+{question: "A Personal Assistant is the person who helps a manager with daily tasks.", options: ["v", "f"], answer: "v"},
+{question: "A Personnel Manager is the person who manages staff and workplace relations.", options: ["v", "f"], answer: "v"},
+{question: "A Production Team Leader is the person who directs production workers.", options: ["v", "f"], answer: "v"},
+{question: "A Sales Representative is the person who sells products to clients.", options: ["v", "f"], answer: "v"},
+{question: "A Senior Administrative Assistant is the person who handles important office tasks.", options: ["v", "f"], answer: "v"},
+{question: "The Executive Team is the group that makes the main decisions.", options: ["v", "f"], answer: "v"},
+{question: "Staff are all the people who work in a company.", options: ["v", "f"], answer: "v"},
+{question: "To help is to support someone with a task.", options: ["v", "f"], answer: "v"},
+{question: "To be in charge of is to have responsibility for something.", options: ["v", "f"], answer: "v"},
+{question: "To define is to explain the meaning of something.", options: ["v", "f"], answer: "v"},
+{question: "To describe is to say what something is like.", options: ["v", "f"], answer: "v"},
+{question: "To develop is to create or improve something.", options: ["v", "f"], answer: "v"},
+{question: "To explain how to use is to show someone how something works.", options: ["v", "f"], answer: "v"},
+{question: "To hire is to give someone a job.", options: ["v", "f"], answer: "v"},
+{question: "To sell is to give a product in exchange for money.", options: ["v", "f"], answer: "v"},
+{question: "A Cafeteria is a place to eat at work.", options: ["v", "f"], answer: "v"},
+{question: "A Car park is a place to park cars.", options: ["v", "f"], answer: "v"},
+{question: "A Meeting Room is a room for group discussions.", options: ["v", "f"], answer: "v"},
+{question: "Ground Floor is the main floor of a building.", options: ["v", "f"], answer: "v"},
+{question: "A Kitchen is a place to prepare food.", options: ["v", "f"], answer: "v"},
+{question: "The Lobby is the entrance area of a building.", options: ["v", "f"], answer: "v"},
+{question: "Maintenance is the team that fixes things.", options: ["v", "f"], answer: "v"},
+{question: "Reception is the front desk of the office.", options: ["v", "f"], answer: "v"},
+{question: "A Storage Room is a place to keep materials.", options: ["v", "f"], answer: "v"},
+{question: "A Restroom is a place to wash and use the toilet.", options: ["v", "f"], answer: "v"},
+{question: "Top Floor is the highest floor of a building.", options: ["v", "f"], answer: "v"},
+{question: "A Warehouse is a place to store products.", options: ["v", "f"], answer: "v"},
+{question: "Behind means in the back of something.", options: ["v", "f"], answer: "v"},
+{question: "Between means in the middle of two things.", options: ["v", "f"], answer: "v"},
+{question: "Downstairs means on a lower floor.", options: ["v", "f"], answer: "v"},
+{question: "Enter means to go inside a place.", options: ["v", "f"], answer: "v"},
+{question: "Exit means to leave a place.", options: ["v", "f"], answer: "v"},
+{question: "Walk past means to go in front of something without stopping.", options: ["v", "f"], answer: "v"},
+{question: "Go straight means to continue in the same direction.", options: ["v", "f"], answer: "v"},
+{question: "A Lift is a machine that moves people between floors.", options: ["v", "f"], answer: "v"},
+{question: "Opposite means directly across from something.", options: ["v", "f"], answer: "v"},
+{question: "Stairs are steps to go up or down floors.", options: ["v", "f"], answer: "v"},
+{question: "Upstairs is on a higher floor.", options: ["v", "f"], answer: "v"},
+{question: "An Appointment is a meeting planned for a specific time.", options: ["v", "f"], answer: "v"},
+{question: "A Business Card is a small card with your contact details.", options: ["v", "f"], answer: "v"},
+{question: "An Employee is a person who works for a company.", options: ["v", "f"], answer: "v"},
+{question: "An Employer is a person or company who gives jobs.", options: ["v", "f"], answer: "v"},
+{question: "An Escalator is moving stairs that go up or down.", options: ["v", "f"], answer: "v"},
+{question: "An Interview is a meeting to ask questions for a job.", options: ["v", "f"], answer: "v"},
+{question: "A Name Badge is a card with someone's name used at work.", options: ["v", "f"], answer: "v"},
+{question: "A Parking Space is a place for one car to park.", options: ["v", "f"], answer: "v"},
+{question: "A Receptionist is the person who welcomes visitors.", options: ["v", "f"], answer: "v"},
+{question: "A Research Department is the team that studies and develops new ideas.", options: ["v", "f"], answer: "v"},
+{question: "A Logistics Department is the team that manages transport and deliveries.", options: ["v", "f"], answer: "v"},
+{question: "Data Entry is typing information into a computer.", options: ["v", "f"], answer: "v"},
+{question: "Deliver a message is to give a message to someone.", options: ["v", "f"], answer: "v"},
+{question: "Distribute the mail is to send personal emails to friends.", options: ["v", "f"], answer: "f"},
+{question: "File documents is to organize papers or digital files.", options: ["v", "f"], answer: "v"},
+{question: "Keep a record is to write information so you don’t forget it.", options: ["v", "f"], answer: "v"},
+{question: "Follow up on is to check progress after something happens.", options: ["v", "f"], answer: "v"},
+{question: "Order supplies is to buy materials the office needs.", options: ["v", "f"], answer: "v"},
+{question: "Receive visitors is to ignore people who come to the office.", options: ["v", "f"], answer: "f"},
+{question: "Decide whether to transfer a call is to choose if you should send a call to someone.", options: ["v", "f"], answer: "v"},
+{question: "Pick up a message is to listen to or read a saved message.", options: ["v", "f"], answer: "v"},
+{question: "Write Minutes is to write what happened in a meeting.", options: ["v", "f"], answer: "v"},
+{question: "Write Agendas is to write the list of things for a meeting.", options: ["v", "f"], answer: "v"},
+{question: "Type is to write using a keyboard.", options: ["v", "f"], answer: "v"},
+{question: "Word Processing is writing and editing text on a computer.", options: ["v", "f"], answer: "v"},
+{question: "A Box of is a container full of items.", options: ["v", "f"], answer: "v"},
+{question: "A Pack of is a single item.", options: ["v", "f"], answer: "f"},
+{question: "A Pair of is two items together.", options: ["v", "f"], answer: "v"},
+{question: "A Roll of is material wrapped around a tube.", options: ["v", "f"], answer: "v"},
+{question: "A Sheet of is one piece of paper.", options: ["v", "f"], answer: "v"},
+{question: "An Air Conditioner is a machine that cools the air.", options: ["v", "f"], answer: "v"},
+{question: "A Coat Rack is used to store documents.", options: ["v", "f"], answer: "f"},
+{question: "A Filing Cabinet is a piece of furniture to store documents.", options: ["v", "f"], answer: "v"},
+{question: "A Photocopier is a machine that makes copies.", options: ["v", "f"], answer: "v"},
+{question: "A Projector is a machine that shows images on a screen.", options: ["v", "f"], answer: "v"},
+{question: "A Scanner is a machine that copies documents into the computer.", options: ["v", "f"], answer: "v"},
+{question: "A Shredder is a machine that destroys documents.", options: ["v", "f"], answer: "v"},
+{question: "A Wastebasket is a small container for trash.", options: ["v", "f"], answer: "v"},
+{question: "To Charge is to ask for money for something.", options: ["v", "f"], answer: "v"},
+{question: "Delivery is the act of bringing a product to a place.", options: ["v", "f"], answer: "v"},
+{question: "An Invoice is a document that shows what you must pay.", options: ["v", "f"], answer: "v"},
+{question: "Unit Price is the price of one item.", options: ["v", "f"], answer: "v"},
+{question: "Quality is how good something is.", options: ["v", "f"], answer: "v"},
+{question: "Quantity is how many items there are.", options: ["v", "f"], answer: "v"},
+{question: "Shipping Cost is money paid for transport.", options: ["v", "f"], answer: "v"},
+{question: "Special Offer is a temporary price reduction.", options: ["v", "f"], answer: "v"},
+{question: "Subtotal is the total before taxes or extra costs.", options: ["v", "f"], answer: "v"},
+{question: "Partial Total is a total of only some items.", options: ["v", "f"], answer: "v"},
+{question: "A Candidate is a person applying for a job.", options: ["v", "f"], answer: "v"},
+{question: "Correspondence is letters or emails received or sent.", options: ["v", "f"], answer: "v"},
+{question: "A Dozen is twelve items.", options: ["v", "f"], answer: "v"},
+{question: "Half a Dozen is six items.", options: ["v", "f"], answer: "v"},
+{question: "A Drawer is a sliding box in furniture.", options: ["v", "f"], answer: "v"},
+{question: "An Inquiry is a question asking for information.", options: ["v", "f"], answer: "v"},
+{question: "In Stock means available to buy.", options: ["v", "f"], answer: "v"},
+{question: "Out of Stock means not available to buy.", options: ["v", "f"], answer: "v"},
+{question: "Inventory is a list of items in a store.", options: ["v", "f"], answer: "v"},
+{question: "A Record is information kept for reference.", options: ["v", "f"], answer: "v"},
+{question: "Office Duties are tasks you must do at work.", options: ["v", "f"], answer: "v"},
+{question: "Contact Someone means to communicate with someone.", options: ["v", "f"], answer: "v"},
+{question: "Delete means to remove permanently.", options: ["v", "f"], answer: "v"},
+{question: "Dial a Number is to enter phone numbers to call.", options: ["v", "f"], answer: "v"},
+{question: "Enter Your Access Code is to type the code to open voicemail.", options: ["v", "f"], answer: "v"},
+{question: "Fast-Forward is to move ahead in a message.", options: ["v", "f"], answer: "v"},
+{question: "Location is the place where something is.", options: ["v", "f"], answer: "v"},
+{question: "Speaker is the part of the phone that plays sound.", options: ["v", "f"], answer: "v"},
+{question: "Press This Key is to push a button.", options: ["v", "f"], answer: "v"},
+{question: "Receiver is the part used to listen and talk.", options: ["v", "f"], answer: "v"},
+{question: "Record an Outgoing Message is to save the message callers hear.", options: ["v", "f"], answer: "v"},
+{question: "Retrieve is to get messages back.", options: ["v", "f"], answer: "v"},
+{question: "Rewind is to go to an earlier part.", options: ["v", "f"], answer: "v"},
+{question: "Save is to keep something stored.", options: ["v", "f"], answer: "v"},
+{question: "Volume is how loud a sound is.", options: ["v", "f"], answer: "v"}
+]
+
+];
+
+// 👇 Seleccionamos 20 aleatorias (o todas si hay menos)
+let quizData = shuffle(allQuestions).slice(0, 20);
+
+let currentQuestion = 0;
+let score = 0;
+const container = document.getElementById("quiz-container");
+const resultDiv = document.getElementById("result");
+const nextBtn = document.getElementById("nextBtn");
+
+
+function showQuestion() {
+  container.innerHTML = "";
+  nextBtn.style.display = "none";
+
+  if(currentQuestion >= quizData.length) {
+    container.innerHTML = `<div class="question"><strong>¡Quiz terminado!</strong><br>Tu Score final es ${score} de ${quizData.length}</div>`;
+    return;
+  }
+
+  const q = quizData[currentQuestion];
+  const div = document.createElement("div");
+  div.className = "question";
+  div.innerHTML = `<strong>${currentQuestion+1}. ${q.question}</strong>`;
+
+  const optionsDiv = document.createElement("div");
+  optionsDiv.className = "options";
+
+  const filteredOptions = q.options.filter(opt => opt.trim() !== "");
+  shuffle(filteredOptions);
+
+  filteredOptions.forEach(option => {
+    const btn = document.createElement("button");
+    btn.textContent = option;
+    btn.dataset.correct = option === q.answer ? "true" : "false";
+
+    btn.onclick = () => {
+      const allBtns = optionsDiv.querySelectorAll("button");
+      allBtns.forEach(b => b.disabled = true);
+
+      if(btn.dataset.correct === "true") {
+        btn.classList.add("correct");
+        score++;
+      } else {
+        btn.classList.add("wrong");
+        allBtns.forEach(b => {
+          if(b.dataset.correct === "true") b.classList.add("correct");
+        });
+      }
+
+      resultDiv.textContent = `Score: ${score}/${quizData.length}`;
+      nextBtn.style.display = "block";
+    };
+
+    optionsDiv.appendChild(btn);
+  });
+
+  div.appendChild(optionsDiv);
+  container.appendChild(div);
+}
+
+nextBtn.onclick = () => {
+  currentQuestion++;
+  showQuestion();
+};
+
+showQuestion();
+</script>
+
+</body>
+</html>
