@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Quiz</title>
+<title>Quiz terminologia</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -75,7 +75,7 @@
 </head>
 <body>
 
-<h1>English Quiz</h1>
+<h1>Quiz English</h1>
 
 <div class="quiz-container" id="quiz-container"></div>
 <div class="result" id="result">Score: 0</div>
@@ -92,246 +92,813 @@ function shuffle(array) {
 
 // Tus questions aquí
 const allQuestions = [
-{question: "An Accounts Assistant is the person who manages the whole company.", options: ["v", "f"], answer: "f"},
-{question: "A CEO is the person who prepares food in the company kitchen.", options: ["v", "f"], answer: "f"},
-{question: "A Finance Director is the person who cleans the parking lot.", options: ["v", "f"], answer: "f"},
-{question: "A Financial Supervisor is responsible for cooking meals for staff.", options: ["v", "f"], answer: "f"},
-{question: "An IT Manager mainly sells products to clients.", options: ["v", "f"], answer: "f"},
-{question: "An HR Manager fixes computers and maintains servers.", options: ["v", "f"], answer: "f"},
-{question: "A Junior Administrative Assistant makes top-level executive decisions.", options: ["v", "f"], answer: "f"},
-{question: "A Marketing Manager is the person who repairs office equipment.", options: ["v", "f"], answer: "f"},
-{question: "An Operations Manager prepares meals in the cafeteria.", options: ["v", "f"], answer: "f"},
-{question: "A Personal Assistant leads the entire operations department.", options: ["v", "f"], answer: "f"},
-{question: "A Personnel Manager writes software code for the IT systems.", options: ["v", "f"], answer: "f"},
-{question: "A Production Team Leader handles hiring for the HR department.", options: ["v", "f"], answer: "f"},
-{question: "A Sales Representative manages employee payroll.", options: ["v", "f"], answer: "f"},
-{question: "A Senior Administrative Assistant is responsible for warehouse deliveries.", options: ["v", "f"], answer: "f"},
-{question: "The Executive Team is the group that cleans meeting rooms.", options: ["v", "f"], answer: "f"},
-{question: "Staff refers only to the marketing department employees.", options: ["v", "f"], answer: "f"},
-{question: "To help means to fire someone from a job.", options: ["v", "f"], answer: "f"},
-{question: "To be in charge of means to avoid responsibility.", options: ["v", "f"], answer: "f"},
-{question: "To define means to walk past something quickly.", options: ["v", "f"], answer: "f"},
-{question: "To describe means to leave a place.", options: ["v", "f"], answer: "f"},
-{question: "To develop means to destroy something already created.", options: ["v", "f"], answer: "f"},
-{question: "To explain how to use means to hide instructions from someone.", options: ["v", "f"], answer: "f"},
-{question: "To hire means to reject all job candidates.", options: ["v", "f"], answer: "f"},
-{question: "To sell means to store products in a warehouse for free.", options: ["v", "f"], answer: "f"},
-{question: "A Cafeteria is a place where employees sleep during work hours.", options: ["v", "f"], answer: "f"},
-{question: "A Parking Lot is a room for business meetings.", options: ["v", "f"], answer: "f"},
-{question: "A Meeting Room is the place where cars are repaired.", options: ["v", "f"], answer: "f"},
-{question: "The Ground Floor is always the highest floor of the building.", options: ["v", "f"], answer: "f"},
-{question: "The Kitchen is the main office for financial operations.", options: ["v", "f"], answer: "f"},
-{question: "The Lobby is the room where products are manufactured.", options: ["v", "f"], answer: "f"},
-{question: "Maintenance is the team that manages job interviews.", options: ["v", "f"], answer: "f"},
-{question: "Reception is where employees store heavy equipment.", options: ["v", "f"], answer: "f"},
-{question: "The Storage Room is where employees eat lunch.", options: ["v", "f"], answer: "f"},
-{question: "A Restroom is the place where meetings are usually held.", options: ["v", "f"], answer: "f"},
-{question: "The Top Floor is always the underground level.", options: ["v", "f"], answer: "f"},
-{question: "The Warehouse is the place where office staff work at their desks.", options: ["v", "f"], answer: "f"},
-{question: "Behind means directly in front of something.", options: ["v", "f"], answer: "f"},
-{question: "Between means far away from two things.", options: ["v", "f"], answer: "f"},
-{question: "Downstairs means on a higher floor.", options: ["v", "f"], answer: "f"},
-{question: "Enter means to leave a place immediately.", options: ["v", "f"], answer: "f"},
-{question: "Exit means to go inside a building.", options: ["v", "f"], answer: "f"},
-{question: "Walk past means to stop and stay in front of something.", options: ["v", "f"], answer: "f"},
-{question: "Go straight means to turn right or left repeatedly.", options: ["v", "f"], answer: "f"},
-{question: "A Lift is a machine used for cooking food.", options: ["v", "f"], answer: "f"},
-{question: "Opposite means located behind something.", options: ["v", "f"], answer: "f"},
-{question: "Stairs are used to store office supplies.", options: ["v", "f"], answer: "f"},
-{question: "Upstairs means on a lower floor.", options: ["v", "f"], answer: "f"},
-{question: "An Appointment is a random visit without planning.", options: ["v", "f"], answer: "f"},
-{question: "A Business Card is a large poster with personal details.", options: ["v", "f"], answer: "f"},
-{question: "An Employee is a person who buys products from the company.", options: ["v", "f"], answer: "f"},
-{question: "An Employer is a person hired by workers.", options: ["v", "f"], answer: "f"},
-{question: "An Escalator is a machine used for shredding paper.", options: ["v", "f"], answer: "f"},
-{question: "An Interview is a meeting to choose office furniture.", options: ["v", "f"], answer: "f"},
-{question: "A Name Badge is a device used to print documents.", options: ["v", "f"], answer: "f"},
-{question: "A Parking Space is a place for eating lunch.", options: ["v", "f"], answer: "f"},
-{question: "A Receptionist is the person who repairs computers.", options: ["v", "f"], answer: "f"},
-{question: "The Research Department manages office cleaning.", options: ["v", "f"], answer: "f"},
-{question: "The Logistics Department handles job interviews.", options: ["v", "f"], answer: "f"},
-{question: "Data entry means loading boxes into trucks.", options: ["v", "f"], answer: "f"},
-{question: "To deliver a message means to delete emails.", options: ["v", "f"], answer: "f"},
-{question: "To distribute mail means to cook meals for employees.", options: ["v", "f"], answer: "f"},
-{question: "To file documents means to throw away important papers.", options: ["v", "f"], answer: "f"},
-{question: "To keep a record means to forget information.", options: ["v", "f"], answer: "f"},
-{question: "To follow up on means to ignore a task completely.", options: ["v", "f"], answer: "f"},
-{question: "To order supplies means to sell office materials.", options: ["v", "f"], answer: "f"},
-{question: "To receive visitors means to refuse to let anyone enter.", options: ["v", "f"], answer: "f"},
-{question: "To transfer a call means to hang up immediately.", options: ["v", "f"], answer: "f"},
-{question: "To pick up a message means to delete everything in voicemail.", options: ["v", "f"], answer: "f"},
-{question: "To write minutes means to write personal letters.", options: ["v", "f"], answer: "f"},
-{question: "To write agendas means to design marketing ads.", options: ["v", "f"], answer: "f"},
-{question: "To type means to draw pictures on paper.", options: ["v", "f"], answer: "f"},
-{question: "Word processing means repairing printers.", options: ["v", "f"], answer: "f"},
-{question: "A box of means one single item.", options: ["v", "f"], answer: "f"},
-{question: "A pack of means a large storage room.", options: ["v", "f"], answer: "f"},
-{question: "A pair of means three items together.", options: ["v", "f"], answer: "f"},
-{question: "A roll of refers to a digital document.", options: ["v", "f"], answer: "f"},
-{question: "A sheet of means a full storage cabinet.", options: ["v", "f"], answer: "f"},
-{question: "An air conditioner is a machine that cuts paper.", options: ["v", "f"], answer: "f"},
-{question: "A coat rack is a device to scan documents.", options: ["v", "f"], answer: "f"},
-{question: "A filing cabinet is a machine that shows images on a screen.", options: ["v", "f"], answer: "f"},
-{question: "A photocopier is a machine for cooking food.", options: ["v", "f"], answer: "f"},
-{question: "A projector is used to shred documents.", options: ["v", "f"], answer: "f"},
-{question: "A scanner is used to cool the office air.", options: ["v", "f"], answer: "f"},
-{question: "A shredder is a machine for making copies.", options: ["v", "f"], answer: "f"},
-{question: "A wastebasket is used to store confidential documents safely.", options: ["v", "f"], answer: "f"},
-{question: "To charge means to receive a delivery.", options: ["v", "f"], answer: "f"},
-{question: "Delivery means sending money to employees.", options: ["v", "f"], answer: "f"},
-{question: "An invoice is a document that describes employee hobbies.", options: ["v", "f"], answer: "f"},
-{question: "Unit price means the total cost including taxes.", options: ["v", "f"], answer: "f"},
-{question: "Quality refers to the number of items purchased.", options: ["v", "f"], answer: "f"},
-{question: "Quantity refers to how good something is.", options: ["v", "f"], answer: "f"},
-{question: "Shipping cost refers to employee salaries.", options: ["v", "f"], answer: "f"},
-{question: "A special offer is a permanent full-price option.", options: ["v", "f"], answer: "f"},
-{question: "Subtotal is the amount after adding extra taxes.", options: ["v", "f"], answer: "f"},
-{question: "Partial total refers to the entire full invoice.", options: ["v", "f"], answer: "f"},
-{question: "A candidate is a person who repairs photocopiers.", options: ["v", "f"], answer: "f"},
-{question: "Correspondence refers to cleaning supplies.", options: ["v", "f"], answer: "f"},
-{question: "A dozen means eight items.", options: ["v", "f"], answer: "f"},
-{question: "Half a dozen means ten items.", options: ["v", "f"], answer: "f"},
-{question: "A drawer is a machine for printing documents.", options: ["v", "f"], answer: "f"},
-{question: "An inquiry is a financial report for taxes.", options: ["v", "f"], answer: "f"},
-{question: "In stock means the item is unavailable.", options: ["v", "f"], answer: "f"},
-{question: "Out of stock means the item is ready to buy.", options: ["v", "f"], answer: "f"},
-{question: "Inventory means a list of employee names.", options: ["v", "f"], answer: "f"},
-{question: "A record is a container for trash.", options: ["v", "f"], answer: "f"},
-{question: "Office duties means recreational activities for employees.", options: ["v", "f"], answer: "f"},
-{question: "To contact someone means to delete their number.", options: ["v", "f"], answer: "f"},
-{question: "To delete means to save a file.", options: ["v", "f"], answer: "f"},
-{question: "To dial a number means to listen to music.", options: ["v", "f"], answer: "f"},
-{question: "To enter your access code means to print a document.", options: ["v", "f"], answer: "f"},
-{question: "To fast-forward means to move backward.", options: ["v", "f"], answer: "f"},
-{question: "Location means how loud the sound is.", options: ["v", "f"], answer: "f"},
-{question: "A speaker is used to type text.", options: ["v", "f"], answer: "f"},
-{question: "Press this key means to ignore all buttons.", options: ["v", "f"], answer: "f"},
-{question: "A headset is used to print documents.", options: ["v", "f"], answer: "f"},
-{question: "To record an outgoing message means to listen to incoming ones.", options: ["v", "f"], answer: "f"},
-{question: "To retrieve means to delete all messages.", options: ["v", "f"], answer: "f"},
-{question: "To rewind means to move forward in a message.", options: ["v", "f"], answer: "f"},
-{question: "To save means to erase information completely.", options: ["v", "f"], answer: "f"},
-{question: "Volume refers to the number of employees in a department.", options: ["v", "f"], answer: "f"},
-{question: "An Accounts Assistant is the person who helps with basic accounting tasks.", options: ["v", "f"], answer: "v"},
-{question: "A CEO is the person who leads the whole company.", options: ["v", "f"], answer: "v"},
-{question: "A Finance Director is the person who manages the company’s money.", options: ["v", "f"], answer: "v"},
-{question: "A Financial Supervisor is the person who checks financial work and supports the team.", options: ["v", "f"], answer: "v"},
-{question: "An IT Manager is the person who manages computer systems and the IT team.", options: ["v", "f"], answer: "v"},
-{question: "An HR Manager is the person who manages employees and hiring.", options: ["v", "f"], answer: "v"},
-{question: "A Junior Administrative Assistant is the person who helps with simple office tasks.", options: ["v", "f"], answer: "v"},
-{question: "A Marketing Manager is the person who plans how to promote products.", options: ["v", "f"], answer: "v"},
-{question: "An Operations Manager is the person who controls daily company activities.", options: ["v", "f"], answer: "v"},
-{question: "A Personal Assistant is the person who helps a manager with daily tasks.", options: ["v", "f"], answer: "v"},
-{question: "A Personnel Manager is the person who manages staff and workplace relations.", options: ["v", "f"], answer: "v"},
-{question: "A Production Team Leader is the person who directs production workers.", options: ["v", "f"], answer: "v"},
-{question: "A Sales Representative is the person who sells products to clients.", options: ["v", "f"], answer: "v"},
-{question: "A Senior Administrative Assistant is the person who handles important office tasks.", options: ["v", "f"], answer: "v"},
-{question: "The Executive Team is the group that makes the main decisions.", options: ["v", "f"], answer: "v"},
-{question: "Staff are all the people who work in a company.", options: ["v", "f"], answer: "v"},
-{question: "To help is to support someone with a task.", options: ["v", "f"], answer: "v"},
-{question: "To be in charge of is to have responsibility for something.", options: ["v", "f"], answer: "v"},
-{question: "To define is to explain the meaning of something.", options: ["v", "f"], answer: "v"},
-{question: "To describe is to say what something is like.", options: ["v", "f"], answer: "v"},
-{question: "To develop is to create or improve something.", options: ["v", "f"], answer: "v"},
-{question: "To explain how to use is to show someone how something works.", options: ["v", "f"], answer: "v"},
-{question: "To hire is to give someone a job.", options: ["v", "f"], answer: "v"},
-{question: "To sell is to give a product in exchange for money.", options: ["v", "f"], answer: "v"},
-{question: "A Cafeteria is a place to eat at work.", options: ["v", "f"], answer: "v"},
-{question: "A Car park is a place to park cars.", options: ["v", "f"], answer: "v"},
-{question: "A Meeting Room is a room for group discussions.", options: ["v", "f"], answer: "v"},
-{question: "Ground Floor is the main floor of a building.", options: ["v", "f"], answer: "v"},
-{question: "A Kitchen is a place to prepare food.", options: ["v", "f"], answer: "v"},
-{question: "The Lobby is the entrance area of a building.", options: ["v", "f"], answer: "v"},
-{question: "Maintenance is the team that fixes things.", options: ["v", "f"], answer: "v"},
-{question: "Reception is the front desk of the office.", options: ["v", "f"], answer: "v"},
-{question: "A Storage Room is a place to keep materials.", options: ["v", "f"], answer: "v"},
-{question: "A Restroom is a place to wash and use the toilet.", options: ["v", "f"], answer: "v"},
-{question: "Top Floor is the highest floor of a building.", options: ["v", "f"], answer: "v"},
-{question: "A Warehouse is a place to store products.", options: ["v", "f"], answer: "v"},
-{question: "Behind means in the back of something.", options: ["v", "f"], answer: "v"},
-{question: "Between means in the middle of two things.", options: ["v", "f"], answer: "v"},
-{question: "Downstairs means on a lower floor.", options: ["v", "f"], answer: "v"},
-{question: "Enter means to go inside a place.", options: ["v", "f"], answer: "v"},
-{question: "Exit means to leave a place.", options: ["v", "f"], answer: "v"},
-{question: "Walk past means to go in front of something without stopping.", options: ["v", "f"], answer: "v"},
-{question: "Go straight means to continue in the same direction.", options: ["v", "f"], answer: "v"},
-{question: "A Lift is a machine that moves people between floors.", options: ["v", "f"], answer: "v"},
-{question: "Opposite means directly across from something.", options: ["v", "f"], answer: "v"},
-{question: "Stairs are steps to go up or down floors.", options: ["v", "f"], answer: "v"},
-{question: "Upstairs is on a higher floor.", options: ["v", "f"], answer: "v"},
-{question: "An Appointment is a meeting planned for a specific time.", options: ["v", "f"], answer: "v"},
-{question: "A Business Card is a small card with your contact details.", options: ["v", "f"], answer: "v"},
-{question: "An Employee is a person who works for a company.", options: ["v", "f"], answer: "v"},
-{question: "An Employer is a person or company who gives jobs.", options: ["v", "f"], answer: "v"},
-{question: "An Escalator is moving stairs that go up or down.", options: ["v", "f"], answer: "v"},
-{question: "An Interview is a meeting to ask questions for a job.", options: ["v", "f"], answer: "v"},
-{question: "A Name Badge is a card with someone's name used at work.", options: ["v", "f"], answer: "v"},
-{question: "A Parking Space is a place for one car to park.", options: ["v", "f"], answer: "v"},
-{question: "A Receptionist is the person who welcomes visitors.", options: ["v", "f"], answer: "v"},
-{question: "A Research Department is the team that studies and develops new ideas.", options: ["v", "f"], answer: "v"},
-{question: "A Logistics Department is the team that manages transport and deliveries.", options: ["v", "f"], answer: "v"},
-{question: "Data Entry is typing information into a computer.", options: ["v", "f"], answer: "v"},
-{question: "Deliver a message is to give a message to someone.", options: ["v", "f"], answer: "v"},
-{question: "Distribute the mail is to send personal emails to friends.", options: ["v", "f"], answer: "f"},
-{question: "File documents is to organize papers or digital files.", options: ["v", "f"], answer: "v"},
-{question: "Keep a record is to write information so you don’t forget it.", options: ["v", "f"], answer: "v"},
-{question: "Follow up on is to check progress after something happens.", options: ["v", "f"], answer: "v"},
-{question: "Order supplies is to buy materials the office needs.", options: ["v", "f"], answer: "v"},
-{question: "Receive visitors is to ignore people who come to the office.", options: ["v", "f"], answer: "f"},
-{question: "Decide whether to transfer a call is to choose if you should send a call to someone.", options: ["v", "f"], answer: "v"},
-{question: "Pick up a message is to listen to or read a saved message.", options: ["v", "f"], answer: "v"},
-{question: "Write Minutes is to write what happened in a meeting.", options: ["v", "f"], answer: "v"},
-{question: "Write Agendas is to write the list of things for a meeting.", options: ["v", "f"], answer: "v"},
-{question: "Type is to write using a keyboard.", options: ["v", "f"], answer: "v"},
-{question: "Word Processing is writing and editing text on a computer.", options: ["v", "f"], answer: "v"},
-{question: "A Box of is a container full of items.", options: ["v", "f"], answer: "v"},
-{question: "A Pack of is a single item.", options: ["v", "f"], answer: "f"},
-{question: "A Pair of is two items together.", options: ["v", "f"], answer: "v"},
-{question: "A Roll of is material wrapped around a tube.", options: ["v", "f"], answer: "v"},
-{question: "A Sheet of is one piece of paper.", options: ["v", "f"], answer: "v"},
-{question: "An Air Conditioner is a machine that cools the air.", options: ["v", "f"], answer: "v"},
-{question: "A Coat Rack is used to store documents.", options: ["v", "f"], answer: "f"},
-{question: "A Filing Cabinet is a piece of furniture to store documents.", options: ["v", "f"], answer: "v"},
-{question: "A Photocopier is a machine that makes copies.", options: ["v", "f"], answer: "v"},
-{question: "A Projector is a machine that shows images on a screen.", options: ["v", "f"], answer: "v"},
-{question: "A Scanner is a machine that copies documents into the computer.", options: ["v", "f"], answer: "v"},
-{question: "A Shredder is a machine that destroys documents.", options: ["v", "f"], answer: "v"},
-{question: "A Wastebasket is a small container for trash.", options: ["v", "f"], answer: "v"},
-{question: "To Charge is to ask for money for something.", options: ["v", "f"], answer: "v"},
-{question: "Delivery is the act of bringing a product to a place.", options: ["v", "f"], answer: "v"},
-{question: "An Invoice is a document that shows what you must pay.", options: ["v", "f"], answer: "v"},
-{question: "Unit Price is the price of one item.", options: ["v", "f"], answer: "v"},
-{question: "Quality is how good something is.", options: ["v", "f"], answer: "v"},
-{question: "Quantity is how many items there are.", options: ["v", "f"], answer: "v"},
-{question: "Shipping Cost is money paid for transport.", options: ["v", "f"], answer: "v"},
-{question: "Special Offer is a temporary price reduction.", options: ["v", "f"], answer: "v"},
-{question: "Subtotal is the total before taxes or extra costs.", options: ["v", "f"], answer: "v"},
-{question: "Partial Total is a total of only some items.", options: ["v", "f"], answer: "v"},
-{question: "A Candidate is a person applying for a job.", options: ["v", "f"], answer: "v"},
-{question: "Correspondence is letters or emails received or sent.", options: ["v", "f"], answer: "v"},
-{question: "A Dozen is twelve items.", options: ["v", "f"], answer: "v"},
-{question: "Half a Dozen is six items.", options: ["v", "f"], answer: "v"},
-{question: "A Drawer is a sliding box in furniture.", options: ["v", "f"], answer: "v"},
-{question: "An Inquiry is a question asking for information.", options: ["v", "f"], answer: "v"},
-{question: "In Stock means available to buy.", options: ["v", "f"], answer: "v"},
-{question: "Out of Stock means not available to buy.", options: ["v", "f"], answer: "v"},
-{question: "Inventory is a list of items in a store.", options: ["v", "f"], answer: "v"},
-{question: "A Record is information kept for reference.", options: ["v", "f"], answer: "v"},
-{question: "Office Duties are tasks you must do at work.", options: ["v", "f"], answer: "v"},
-{question: "Contact Someone means to communicate with someone.", options: ["v", "f"], answer: "v"},
-{question: "Delete means to remove permanently.", options: ["v", "f"], answer: "v"},
-{question: "Dial a Number is to enter phone numbers to call.", options: ["v", "f"], answer: "v"},
-{question: "Enter Your Access Code is to type the code to open voicemail.", options: ["v", "f"], answer: "v"},
-{question: "Fast-Forward is to move ahead in a message.", options: ["v", "f"], answer: "v"},
-{question: "Location is the place where something is.", options: ["v", "f"], answer: "v"},
-{question: "Speaker is the part of the phone that plays sound.", options: ["v", "f"], answer: "v"},
-{question: "Press This Key is to push a button.", options: ["v", "f"], answer: "v"},
-{question: "Receiver is the part used to listen and talk.", options: ["v", "f"], answer: "v"},
-{question: "Record an Outgoing Message is to save the message callers hear.", options: ["v", "f"], answer: "v"},
-{question: "Retrieve is to get messages back.", options: ["v", "f"], answer: "v"},
-{question: "Rewind is to go to an earlier part.", options: ["v", "f"], answer: "v"},
-{question: "Save is to keep something stored.", options: ["v", "f"], answer: "v"},
-{question: "Volume is how loud a sound is.", options: ["v", "f"], answer: "v"}
+
+{
+  "question": "Customers get ________ about their shipments on their mobile phones or e-mail.",
+  "options": ["updates", "cheques", "how to handle", "Customer Service"],
+  "answer": "updates"
+},
+{
+  "question": "Customers can track their shipments by phoning ________.",
+  "options": ["Customer Service", "updates", "cheques", "how to handle"],
+  "answer": "Customer Service"
+},
+{
+  "question": "Customers are offered a discount if they ________.",
+  "options": ["open a FastWay account", "how to handle", "updates", "cheques"],
+  "answer": "open a FastWay account"
+},
+{
+  "question": "Customers can’t pay with ________.",
+  "options": ["cheques", "updates", "how to handle", "Customer Service"],
+  "answer": "cheques"
+},
+{
+  "question": "Couriers have learned ________ fragile packages.",
+  "options": ["how to handle", "updates", "cheques", "Customer Service"],
+  "answer": "how to handle"
+},
+{
+  "question": "Why does a customer need a tracking number and password?",
+  "options": ["To log in for online tracking", "If he / she isn’t available to accept the package", "At their local FastWay office", "Customers who ship frequently."],
+  "answer": "To log in for online tracking"
+},
+{
+  "question": "When does the courier leave a note for a customer?",
+  "options": ["If he / she isn’t available to accept the package", "To log in for online tracking", "At their local FastWay office", "It’s the percentage of shipments which reach their destinations safely and on time."],
+  "answer": "If he / she isn’t available to accept the package"
+},
+{
+  "question": "Where can customers pick up their packages if they aren’t home to accept their package?",
+  "options": ["At their local FastWay office", "To log in for online tracking", "If he / she isn’t available to accept the package", "Customers who ship frequently."],
+  "answer": "At their local FastWay office"
+},
+{
+  "question": "Which customers should open a FastWay account according to the text’s recommendation?",
+  "options": ["Customers who ship frequently.", "At their local FastWay office", "To log in for online tracking", "It’s the percentage of shipments which reach their destinations safely and on time."],
+  "answer": "Customers who ship frequently."
+},
+{
+  "question": "Why does the text mention 99.8%?",
+  "options": ["It’s the percentage of shipments which reach their destinations safely and on time.", "Customers who ship frequently.", "To log in for online tracking", "If he / she isn’t available to accept the package"],
+  "answer": "It’s the percentage of shipments which reach their destinations safely and on time."
+},
+{
+  "question": "Circle the word that doesn’t belong: invoice / subtotal / receipt / bank statement",
+  "options": ["subtotal", "invoice", "receipt", "bank statement"],
+  "answer": "subtotal"
+},
+{
+  "question": "Circle the word that doesn’t belong: reply / cut / paste / copy",
+  "options": ["reply", "cut", "paste", "copy"],
+  "answer": "reply"
+},
+{
+  "question": "Circle the word that doesn’t belong: photocopier / scanner / shredder / loudspeaker",
+  "options": ["loudspeaker", "photocopier", "scanner", "shredder"],
+  "answer": "loudspeaker"
+},
+{
+  "question": "Circle the word that doesn’t belong: wrap / mark / rewind / weigh",
+  "options": ["rewind", "wrap", "mark", "weigh"],
+  "answer": "rewind"
+},
+{
+  "question": "Circle the word that doesn’t belong: delete / replay / save / retrieve",
+  "options": ["replay", "delete", "save", "retrieve"],
+  "answer": "replay"
+},
+{
+  "question": "Circle the word that doesn’t belong: column / heading / row / paragraph",
+  "options": ["paragraph", "column", "heading", "row"],
+  "answer": "paragraph"
+},
+{
+  "question": "Circle the word that doesn’t belong: price / cost / quality / payment",
+  "options": ["quality", "price", "cost", "payment"],
+  "answer": "quality"
+},
+{
+  "question": "Circle the word that doesn’t belong: deliver / charge / send / distribute",
+  "options": ["charge", "deliver", "send", "distribute"],
+  "answer": "charge"
+},
+{
+  "question": "If you don’t bring your own lunch to work, you can buy lunch at the ________.",
+  "options": ["cafeteria", "kitchen", "warehouse", "stockroom"],
+  "answer": "cafeteria"
+},
+{
+  "question": "If you need some office supplies, go to the ________.",
+  "options": ["stockroom", "maintenance", "the lobby", "cafeteria"],
+  "answer": "stockroom"
+},
+{
+  "question": "Why are you taking the ________ to the 19th floor? That’s crazy!",
+  "options": ["lift", "stairs", "exit", "lobby"],
+  "answer": "lift"
+},
+{
+  "question": "You should ________ each package before you send it.",
+  "options": ["inspect", "underline", "handle", "wrap"],
+  "answer": "inspect"
+},
+{
+  "question": "Have you got a ________ of letter-sized paper?",
+  "options": ["sheet", "pair", "roll", "packet"],
+  "answer": "sheet"
+},
+{
+  "question": "Make sure all letters are ________ before they are posted.",
+  "options": ["signed", "modified", "developed", "inspected"],
+  "answer": "signed"
+},
+{
+  "question": "Can you ________ with the CEO for next Tuesday?",
+  "options": ["schedule a meeting", "type letters", "deliver the message", "sign letters"],
+  "answer": "schedule a meeting"
+},
+{
+  "question": "Write the address on the ________ and attach it to the package.",
+  "options": ["label", "enclosure", "directory", "receipt"],
+  "answer": "label"
+},
+{
+  "question": "Tim is Head of IT. His department is ________ all the company’s computers.",
+  "options": ["in charge of", "contact someone", "show the visitors around", "log out"],
+  "answer": "in charge of"
+},
+{
+  "question": "I need to ________ from Coten International. Have you got their phone number?",
+  "options": ["contact someone", "in charge of", "log out", "update the mailing list"],
+  "answer": "contact someone"
+},
+{
+  "question": "Can you ________ the building, please?",
+  "options": ["show the visitors around", "Go past", "contact someone", "explain how to use"],
+  "answer": "show the visitors around"
+},
+{
+  "question": "I left the phone ________ by mistake. That’s why the phone didn’t ring all morning.",
+  "options": ["off the hook", "in charge of", "press this button", "log out"],
+  "answer": "off the hook"
+},
+{
+  "question": "________ the CEO’s office. Then turn right and you’ll see it in front of you.",
+  "options": ["Go past", "in charge of", "show the visitors around", "contact someone"],
+  "answer": "Go past"
+},
+{
+  "question": "Can you ________ the new fax machine?",
+  "options": ["explain how to use", "press this button", "update the mailing list", "prepare a presentation"],
+  "answer": "explain how to use"
+},
+{
+  "question": "You should always ________ of your computer account at the end of the day.",
+  "options": ["log out", "off the hook", "in charge of", "press this button"],
+  "answer": "log out"
+},
+{
+  "question": "I would like you to help me ________ about our hotels in the UK for the meeting on Tuesday.",
+  "options": ["prepare a presentation", "update the mailing list", "explain how to use", "contact someone"],
+  "answer": "prepare a presentation"
+},
+{
+  "question": "You need to ________ to hear your incoming messages.",
+  "options": ["press this button", "log out", "off the hook", "Go past"],
+  "answer": "press this button"
+},
+{
+  "question": "You need to ________ before we send out the new catalogue to our customers",
+  "options": ["update the mailing list", "prepare a presentation", "press this button", "contact someone"],
+  "answer": "update the mailing list"
+},
+{
+  "question": "Please put these documents in the coat rack. (What should 'coat rack' be?)",
+  "options": ["filing cabinet", "projector", "pair", "godos"],
+  "answer": "filing cabinet"
+},
+{
+  "question": "We’ll need the air-conditioner to show our PowerPoint presentations at the meeting. (What should 'air-conditioner' be?)",
+  "options": ["projector", "filing cabinet", "pair", "roll"],
+  "answer": "projector"
+},
+{
+  "question": "Have you got a roll of scissors? (What should 'roll' be?)",
+  "options": ["pair", "roll", "projector", "godos"],
+  "answer": "pair"
+},
+{
+  "question": "Would you like me to hang your jacket on the filing cabinet? (What should 'filing cabinet' be?)",
+  "options": ["coat rack", "projector", "pair", "air-conditioner"],
+  "answer": "coat rack"
+},
+{
+  "question": "When will the special instructions arrive? We’ve got many customers who are waiting for their orders. (What should 'special instructions' be?)",
+  "options": ["godos", "projector", "air-conditioner", "roll"],
+  "answer": "godos"
+},
+{
+  "question": "There’s a pair of sticky tape on my desk. (What should 'pair' be?)",
+  "options": ["roll", "pair", "godos", "filing cabinet"],
+  "answer": "roll"
+},
+{
+  "question": "I’m hot. Turn on the projector. (What should 'projector' be?)",
+  "options": ["air-conditioner", "projector", "coat rack", "roll"],
+  "answer": "air-conditioner"
+},
+{
+  "question": "The goods are keep away from heat and handle with care (What should 'goods' be?)",
+  "options": ["special instructions", "godos", "filing cabinet", "projector"],
+  "answer": "special instructions"
+},
+{
+  "question": "The CEO’s office is on the ________ floor of the building. There’s a great view of the town from his window.",
+  "options": ["top", "fragile", "postage", "measure"],
+  "answer": "top"
+},
+{
+  "question": "You should wrap the clock in bubble wrap. It’s very ________.",
+  "options": ["fragile", "top", "postage", "measure"],
+  "answer": "fragile"
+},
+{
+  "question": "This package is quite heavy. The ________ will be expensive.",
+  "options": ["postage", "fragile", "top", "measure"],
+  "answer": "postage"
+},
+{
+  "question": "We must ________ the package – what are its length, height and width?",
+  "options": ["measure", "distribute", "click", "photocopier"],
+  "answer": "measure"
+},
+{
+  "question": "You need to ________ the incoming mail to the employees by 9.30 am.",
+  "options": ["distribute", "measure", "click", "photocopier"],
+  "answer": "distribute"
+},
+{
+  "question": "You must double ________ on this icon to log into the program.",
+  "options": ["click", "distribute", "measure", "photocopier"],
+  "answer": "click"
+},
+{
+  "question": "Does this ________ copy in colour or only in black and white?",
+  "options": ["photocopier", "click", "distribute", "top"],
+  "answer": "photocopier"
+},
+{
+  "question": "There’s a ________ of six highlighters on my desk.",
+  "options": ["packet", "photocopier", "click", "distribute"],
+  "answer": "packet"
+},
+{
+  "question": "Amy calls John in the ________.",
+  "options": ["morning", "afternoon", "evening", "night"],
+  "answer": "morning"
+},
+{
+  "question": "Amy works for the ________.",
+  "options": ["Personnel Manager", "Technology Department", "Personal Assistant", "Financial Department"],
+  "answer": "Personnel Manager"
+},
+{
+  "question": "The discussed job mainly involves ________.",
+  "options": ["screening calls", "going to meetings", "writing letters", "making coffee"],
+  "answer": "screening calls"
+},
+{
+  "question": "Human Resources is near Amy’s office / the Financial Department / the Accounting Department. (Choose the correct one)",
+  "options": ["the Accounting Department", "Amy’s office", "the Financial Department", "the lobby"],
+  "answer": "the Accounting Department"
+},
+{
+  "question": "John should park ________.",
+  "options": ["in the visitors’ car park", "on Victoria Street", "in the post office car park", "on the street"],
+  "answer": "in the visitors’ car park"
+},
+{
+  "question": "John should ________ before his interview.",
+  "options": ["call Amy", "send an e-mail", "fill in a form", "send a text"],
+  "answer": "call Amy"
+},
+{
+  "question": "Why do many businesses lose customers?",
+  "options": ["Because of high shipping costs.", "Only what it costs them to ship.", "Because she’s not sure she can trust the one she found.", "How often do they pick up?"],
+  "answer": "Because of high shipping costs."
+},
+{
+  "question": "What should businesses charge customers for shipping?",
+  "options": ["Only what it costs them to ship.", "Because of high shipping costs.", "Because she’s not sure she can trust the one she found.", "a. How often do they pick up?"],
+  "answer": "Only what it costs them to ship."
+},
+{
+  "question": "Why does Tina want to use a different shipper?",
+  "options": ["Because she’s not sure she can trust the one she found.", "Only what it costs them to ship.", "Because of high shipping costs.", "How often do they pick up?"],
+  "answer": "Because she’s not sure she can trust the one she found."
+},
+{
+  "question": "What should Tina find out from the shippers?",
+  "options": ["a. How often do they pick up? b. What happens if her goods are lost?", "Because of high shipping costs.", "Only what it costs them to ship.", "Because she’s not sure she can trust the one she found."],
+  "answer": "a. How often do they pick up? b. What happens if her goods are lost?"
+},
+{
+  "question": "There are ________ to using a bigger shipping company.",
+  "options": ["advantages", "negotiations", "requirements", "volume"],
+  "answer": "advantages"
+},
+{
+  "question": "Don’t forget to ________ the colour and quantity when you order.",
+  "options": ["specify", "introduce", "compete", "import"],
+  "answer": "specify"
+},
+{
+  "question": "We can’t ________ with their prices but we can offer better service.",
+  "options": ["compete", "specify", "advantages", "volume"],
+  "answer": "compete"
+},
+{
+  "question": "We charge our customers by ________, not by weight.",
+  "options": ["volume", "compete", "specify", "requirements"],
+  "answer": "volume"
+},
+{
+  "question": "I’d like to ________ you to Mr Thornton, our new Financial Director.",
+  "options": ["introduce", "import", "negotiations", "advantages"],
+  "answer": "introduce"
+},
+{
+  "question": "You must check the ________ for shipping to India.",
+  "options": ["requirements", "volume", "compete", "specify"],
+  "answer": "requirements"
+},
+{
+  "question": "Our company would like to ________ Japanese products into the UK.",
+  "options": ["import", "introduce", "requirements", "advantages"],
+  "answer": "import"
+},
+{
+  "question": "After two weeks of ________, the companies still can’t agree.",
+  "options": ["negotiations", "import", "introduce", "requirements"],
+  "answer": "negotiations"
+},
+{
+  "question": "I’ll be out of town next week. (Choose the best reply)",
+  "options": ["a. Where are you going?", "b. I was there last month.", "c. The train leaves at 4.00.", "d. What time?"],
+  "answer": "a. Where are you going?"
+},
+{
+  "question": "Alice has a very friendly tone of voice. (Choose the best reply)",
+  "options": ["a. Yes, she sounds very pleasant.", "b. Yes, it’s hard to hear her sometimes.", "c. Yes, she should make sure the customer is happy.", "d. No, she is quiet."],
+  "answer": "a. Yes, she sounds very pleasant."
+},
+{
+  "question": "I’m sorry, Mr Brown’s line is busy at the moment. (Choose the best next action/reply)",
+  "options": ["c. Can you ask him to get back to me?", "a. When will he be back?", "b. Should I take a message?", "d. I'll call back later."],
+  "answer": "c. Can you ask him to get back to me?"
+},
+{
+  "question": "I’d like to go over the contract with you. (Choose the best reply/next step)",
+  "options": ["b. We can do it after lunch.", "a. Put it in the filing cabinet.", "c. You shouldn’t go there.", "d. I'm busy right now."],
+  "answer": "b. We can do it after lunch."
+},
+{
+  "question": "You should have asked for permission before sending that fax. (Choose the best reply/apology)",
+  "options": ["c. I’m sorry. It won’t happen again.", "a. Is it OK if I send them a fax?", "b. Alright. I’ll send it later.", "d. Why not?"],
+  "answer": "c. I’m sorry. It won’t happen again."
+},
+{
+  "question": "Please transfer my calls to Greg while I’m away. (Choose the best reply/confirmation)",
+  "options": ["a. No problem. When are you leaving?", "b. No problem. Greg works on the top floor.", "c. No problem. I’ll put you through now.", "d. Greg is busy too."],
+  "answer": "a. No problem. When are you leaving?"
+},
+{
+  "question": "Can you put me through to ________ 463, please?",
+  "options": ["extension", "line", "ring", "reply"],
+  "answer": "extension"
+},
+{
+  "question": "They’re unloading the ________ now.",
+  "options": ["vessel", "consignee", "port", "trade"],
+  "answer": "vessel"
+},
+{
+  "question": "You should try exporting to ________ markets.",
+  "options": ["foreign", "domestic", "pleasant", "shipping"],
+  "answer": "foreign"
+},
+{
+  "question": "I’ve been trying to reach the company all day but there’s no ________.",
+  "options": ["reply", "delivery", "reference", "contacts"],
+  "answer": "reply"
+},
+{
+  "question": "We guarantee fast ________.",
+  "options": ["shipping", "trade", "contacts", "investment"],
+  "answer": "shipping"
+},
+{
+  "question": "The company made a big profit from their ________.",
+  "options": ["investment", "opportunity", "signature", "risks"],
+  "answer": "investment"
+},
+{
+  "question": "What are the requirements for sending ________ to Japan?",
+  "options": ["freight containers", "special instructions", "container terminals", "arrangements"],
+  "answer": "freight containers"
+},
+{
+  "question": "You should avoid taking too many ________ when you start a business.",
+  "options": ["risks", "receipts", "arrangements", "requirements"],
+  "answer": "risks"
+},
+{
+  "question": "I’ve got an urgent ________ for Mr Watkins.",
+  "options": ["message", "opinion", "impression", "reply"],
+  "answer": "message"
+},
+{
+  "question": "What is the company going to do about the loss of our ________?",
+  "options": ["cargo", "extension", "negotiations", "risks"],
+  "answer": "cargo"
+},
+{
+  "question": "Evaluate the statement: You should do a follow-up before you sign a contract. (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Evaluate the statement: Your customers should always be your first priority. (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Evaluate the statement: You should always greet your visitors when they leave. (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Evaluate the statement: It is difficult to work with people if you don’t trust them. (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Evaluate the statement: Workers load the ships with cargo after they leave the port. (True/False based on the original answers)",
+  "options": ["False", "True", "Maybe", "It depends"],
+  "answer": "False"
+},
+{
+  "question": "Evaluate the statement: You should always interrupt your customer when he is speaking. (True/False based on the original answers)",
+  "options": ["False", "True", "Maybe", "It depends"],
+  "answer": "False"
+},
+{
+  "question": "Evaluate the statement: Businesses should always try to answer customers’ calls before the third ring. (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Evaluate the statement: It’s important to know the job requirements before you go for an interview (True/False based on the original answers)",
+  "options": ["True", "False", "Maybe", "It depends"],
+  "answer": "True"
+},
+{
+  "question": "Nicola does her job very ________.",
+  "options": ["professionally", "loudly", "clearly", "unprofessionally"],
+  "answer": "professionally"
+},
+{
+  "question": "Please send us a list of your ________.",
+  "options": ["rates", "negotiations", "paperwork", "comments"],
+  "answer": "rates"
+},
+{
+  "question": "It is ________ that we send the e-mail before 4 o’clock.",
+  "options": ["essential", "great", "responsible", "optional"],
+  "answer": "essential"
+},
+{
+  "question": "Do you know the name of the ________ that produced the goods?",
+  "options": ["manufacturer", "director", "courier", "buyer"],
+  "answer": "manufacturer"
+},
+{
+  "question": "European countries do a lot of ________ with each other.",
+  "options": ["trade", "investment", "background", "paperwork"],
+  "answer": "trade"
+},
+{
+  "question": "Mrs Wilson is ________ at the moment. Can I help you?",
+  "options": ["unavailable", "urgent", "impatient", "available"],
+  "answer": "unavailable"
+},
+{
+  "question": "What was the ________ of this cargo?",
+  "options": ["point of origin", "volume", "heading", "destination"],
+  "answer": "point of origin"
+},
+{
+  "question": "Do you have a ________ for your house?",
+  "options": ["buyer", "shipper", "vessel", "manufacturer"],
+  "answer": "buyer"
+},
+{
+  "question": "I’d like to ________ something with you.",
+  "options": ["discuss", "guarantee", "describe", "postpone"],
+  "answer": "discuss"
+},
+{
+  "question": "The company is losing money. We need to ________.",
+  "options": ["minimise costs", "hang up", "start a business", "increase sales"],
+  "answer": "minimise costs"
+},
+{
+  "question": "Mr Wilson didn’t ________.",
+  "options": ["return Mrs Ford’s calls", "get back to Peter", "leave James a message", "answer the phone"],
+  "answer": "return Mrs Ford’s calls"
+},
+{
+  "question": "Mrs Ford’s order of bananas ________.",
+  "options": ["didn’t arrive", "arrived a week late", "arrived on Monday", "was cancelled"],
+  "answer": "didn’t arrive"
+},
+{
+  "question": "What is Mrs Ford’s order number?",
+  "options": ["A768", "A678", "A867", "B123"],
+  "answer": "A768"
+},
+{
+  "question": "The workers are ________ the freight container now.",
+  "options": ["unloading", "waiting for", "delivering", "loading"],
+  "answer": "unloading"
+},
+{
+  "question": "Mrs Ford will receive her order ________.",
+  "options": ["tomorrow afternoon", "yesterday afternoon", "this afternoon", "next week"],
+  "answer": "tomorrow afternoon"
+},
+{
+  "question": "Where is Mr Wilson?",
+  "options": ["Out of town.", "At the office.", "In a meeting.", "On holiday."],
+  "answer": "Out of town."
+},
+{
+  "question": "What is Peter’s job?",
+  "options": ["Mr Wilson’s assistant.", "A customer.", "A manager.", "A delivery driver."],
+  "answer": "Mr Wilson’s assistant."
+},
+{
+  "question": "Why does Mrs Ford want to order from Fast Fruit?",
+  "options": ["Because they are more reliable than Fresh and Fruity.", "Because they are cheaper.", "Because they have better bananas.", "Because they are closer."],
+  "answer": "Because they are more reliable than Fresh and Fruity."
+},
+{
+  "question": "Why doesn’t Mrs Ford want James to put her on hold?",
+  "options": ["Because there are a lot of customers in her shop.", "Because she is impatient.", "Because the music is bad.", "Because she has to leave."],
+  "answer": "Because there are a lot of customers in her shop."
+},
+{
+  "question": "What is Mrs Ford going to tell Mr Wilson?",
+  "options": ["That James was very helpful", "That the order was wrong", "That she is angry", "That she cancelled the order"],
+  "answer": "That James was very helpful"
+},
+{
+  "question": "Match/Relate: cancel / reschedule",
+  "options": ["postpone", "buyer", "essential", "guarantee"],
+  "answer": "postpone"
+},
+{
+  "question": "Match/Relate: supplier / manufacturer",
+  "options": ["buyer", "postpone", "essential", "guarantee"],
+  "answer": "buyer"
+},
+{
+  "question": "Match/Relate: urgent / critical",
+  "options": ["essential", "postpone", "buyer", "guarantee"],
+  "answer": "essential"
+},
+{
+  "question": "Match/Relate: catered / menu",
+  "options": ["buffet lunch", "postpone", "buyer", "guarantee"],
+  "answer": "buffet lunch"
+},
+{
+  "question": "Match/Relate: be cut off / miss a call",
+  "options": ["no reply", "postpone", "buyer", "guarantee"],
+  "answer": "no reply"
+},
+{
+  "question": "Match/Relate: ensure / risk",
+  "options": ["guarantee", "postpone", "buyer", "essential"],
+  "answer": "guarantee"
+},
+{
+  "question": "Match/Relate: daily / quarterly",
+  "options": ["monthly", "postpone", "buyer", "guarantee"],
+  "answer": "monthly"
+},
+{
+  "question": "Match/Relate: demonstration / display",
+  "options": ["exhibition", "postpone", "buyer", "guarantee"],
+  "answer": "exhibition"
+},
+{
+  "question": "Increasing sales in the South American market is a follow-up for our new CEO. (What should 'follow-up' be?)",
+  "options": ["priority", "comments", "Registration", "name tags"],
+  "answer": "priority"
+},
+{
+  "question": "We received a lot of positive name tags on our company website from our customers. (What should 'name tags' be?)",
+  "options": ["comments", "priority", "Registration", "objections"],
+  "answer": "comments"
+},
+{
+  "question": "Priority for the convention opens on 14th June. (What should 'Priority' be?)",
+  "options": ["Registration", "priority", "comments", "name tags"],
+  "answer": "Registration"
+},
+{
+  "question": "Visitors to the company should wear their objections at all times. (What should 'objections' be?)",
+  "options": ["name tags", "priority", "comments", "Registration"],
+  "answer": "name tags"
+},
+{
+  "question": "The profit left the port of origin yesterday. (What should 'profit' be?)",
+  "options": ["cargo", "priority", "comments", "name tags"],
+  "answer": "cargo"
+},
+{
+  "question": "The company made £50,000 cargo last year. (What should 'cargo' be?)",
+  "options": ["profit", "priority", "comments", "name tags"],
+  "answer": "profit"
+},
+{
+  "question": "We always do a registration to make sure customers are satisfied with our service. (What should 'registration' be?)",
+  "options": ["follow-up", "priority", "comments", "name tags"],
+  "answer": "follow-up"
+},
+{
+  "question": "One of my main comments to buying that computer is that it is too expensive (What should 'comments' be?)",
+  "options": ["objections", "priority", "comments", "name tags"],
+  "answer": "objections"
+},
+{
+  "question": "Order a Homesafe alarm before 3rd December if you want to ________.",
+  "options": ["get it delivered for free", "save £70", "install it easily", "get a discount"],
+  "answer": "get it delivered for free"
+},
+{
+  "question": "Alan arrived home ________ the police.",
+  "options": ["after", "before", "together with", "at the same time as"],
+  "answer": "after"
+},
+{
+  "question": "Alan is happy with Homesafe because ________.",
+  "options": ["it caught a burglar", "it is not expensive", "the monthly fees aren’t high", "it was easy to install"],
+  "answer": "it caught a burglar"
+},
+{
+  "question": "Tina is trying to ________.",
+  "options": ["contact customer service", "contact her bank", "order Homesafe", "complain"],
+  "answer": "contact customer service"
+},
+{
+  "question": "Paul wants a reliable alarm system because he ________.",
+  "options": ["is often away from home", "has already had a break-in", "often sees suspicious things", "has a lot of valuable items"],
+  "answer": "is often away from home"
+},
+{
+  "question": "Homesafe sends text messages when ________.",
+  "options": ["there is any suspicious activity on your premises", "it rains", "a customer calls", "the police arrive"],
+  "answer": "there is any suspicious activity on your premises"
+},
+{
+  "question": "Homesafe is offering a discount of ________ on their alarm system.",
+  "options": ["£70", "£50", "£100", "£30"],
+  "answer": "£70"
+},
+{
+  "question": "According to Alan, it took ________ to install the Homesafe alarm system in his home.",
+  "options": ["less than an hour", "a day", "two hours", "a week"],
+  "answer": "less than an hour"
+},
+{
+  "question": "Tina doesn’t want to be put on hold. She wants to at least ________.",
+  "options": ["leave a message", "speak to a manager", "cancel her order", "get a call back"],
+  "answer": "leave a message"
+},
+{
+  "question": "Paul is annoyed because ________.",
+  "options": ["Homesafe also alerts him to normal activities.", "the system is broken", "the discount isn't high enough", "customer service is slow"],
+  "answer": "Homesafe also alerts him to normal activities."
+},
+{
+  "question": "Circle the word that doesn’t belong: suspicious / luxurious / impatient / rude",
+  "options": ["luxurious", "suspicious", "impatient", "rude"],
+  "answer": "luxurious"
+},
+{
+  "question": "Circle the word that doesn’t belong: cancel / reschedule / postpone / replay",
+  "options": ["replay", "cancel", "reschedule", "postpone"],
+  "answer": "replay"
+},
+{
+  "question": "Circle the word that doesn’t belong: access / feature / display / exhibit",
+  "options": ["access", "feature", "display", "exhibit"],
+  "answer": "access"
+},
+{
+  "question": "Circle the word that doesn’t belong: cheque / invoice / attachment / receipt",
+  "options": ["attachment", "cheque", "invoice", "receipt"],
+  "answer": "attachment"
+},
+{
+  "question": "Circle the word that doesn’t belong: domestic / worldwide / foreign / international",
+  "options": ["domestic", "worldwide", "foreign", "international"],
+  "answer": "domestic"
+},
+{
+  "question": "Circle the word that doesn’t belong: refund / enclosure / replacement / compensation",
+  "options": ["enclosure", "refund", "replacement", "compensation"],
+  "answer": "enclosure"
+},
+{
+  "question": "Circle the word that doesn’t belong: notify / remind / alert / modify",
+  "options": ["modify", "notify", "remind", "alert"],
+  "answer": "modify"
+},
+{
+  "question": "Circle the word that doesn’t belong: weekly / daily / calmly / monthly",
+  "options": ["calmly", "weekly", "daily", "monthly"],
+  "answer": "calmly"
+},
+{
+  "question": "Can you explain how to send a fax? (Choose the best reply)",
+  "options": ["b. First, press this button.", "a. Go to the end of the corridor.", "c. You need to answer all incoming calls quickly.", "d. Use the photocopier."],
+  "answer": "b. First, press this button."
+},
+{
+  "question": "I’m sorry, but Mrs Fields is out of the office. (Choose the best reply/next action)",
+  "options": ["a. Can you please ask her to get back to me?", "b. I’ll be in touch with you.", "c. I’m sorry. I was on another line.", "d. I'll hang up."],
+  "answer": "a. Can you please ask her to get back to me?"
+},
+{
+  "question": "I need some time off next week. (Choose the best reply/reason)",
+  "options": ["c. You do know this is our busiest period in the year.", "a. I have to deal with some family matters.", "b. Prices are expensive in the high season.", "d. Why do you need time off?"],
+  "answer": "c. You do know this is our busiest period in the year."
+},
+{
+  "question": "This will have serious consequences for our business. (Choose the best reply/apology)",
+  "options": ["b. I apologise most sincerely.", "a. That’s no excuse.", "c. We’ll know the answer in the long run.", "d. It's not my fault."],
+  "answer": "b. I apologise most sincerely."
+},
+{
+  "question": "Have you seen our latest line of products? (Choose the best reply)",
+  "options": ["c. No, I haven’t. Can you send me your catalogue?", "a. Yes, I saw your banner at the exhibition.", "b. Have you got my business card?", "d. I don't care."],
+  "answer": "c. No, I haven’t. Can you send me your catalogue?"
+},
+{
+  "question": "Can we hold the meeting on 30th September? (Choose the best reply/confirmation)",
+  "options": ["a. That’s fine. I’ll book the conference room.", "b. I’d prefer to hold an on-site meeting.", "c. Have you got the attendance list?", "d. No, I'm busy."],
+  "answer": "a. That’s fine. I’ll book the conference room."
+},
+{
+  "question": "Have you seen anyone suspicious on the company premises? (Choose the best reply)",
+  "options": ["a. No, but I’ll check the security cameras.", "b. No, I’ll notify the manager immediately.", "c. No, we installed an excellent surveillance system.", "d. Yes, I called the police."],
+  "answer": "a. No, but I’ll check the security cameras."
+},
+{
+  "question": "Would you like to make a reservation? (Choose the best reply)",
+  "options": ["b. No, I’ll get back to you next week.", "a. When will it take place?", "c. No, I’m afraid that won’t work as I’ve got a previous commitment.", "d. Yes, please."],
+  "answer": "b. No, I’ll get back to you next week."
+},
+{
+  "question": "I could tell from his ________ that he was becoming impatient with the CEO.",
+  "options": ["body language", "light refreshments", "product manual", "special offer"],
+  "answer": "body language"
+},
+{
+  "question": "We should offer ________ at Monday’s board meeting.",
+  "options": ["light refreshments", "body language", "product manual", "special offer"],
+  "answer": "light refreshments"
+},
+{
+  "question": "Our ________ will answer all your questions about how to use the program.",
+  "options": ["product manual", "body language", "light refreshments", "special offer"],
+  "answer": "product manual"
+},
+{
+  "question": "Enjoy our ________. Book your flight before 2nd March and you’ll get 15% off your car rental.",
+  "options": ["special offer", "body language", "light refreshments", "product manual"],
+  "answer": "special offer"
+},
+{
+  "question": "You have to show your passport and ________ before you get on the plane.",
+  "options": ["boarding pass", "body language", "light refreshments", "product manual"],
+  "answer": "boarding pass"
+}
+
 ];
 
 // 👇 Seleccionamos 20 aleatorias (o todas si hay menos)
